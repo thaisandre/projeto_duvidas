@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+
+.adicionaCarreira {
+	position:relative;
+	width: 30%;
+	height: 100%;
+	float: left;
+}
+
+.listaCarreira {
+	position: relative;
+	width: 30%;
+	height: 100%;
+	float: left;
+}
