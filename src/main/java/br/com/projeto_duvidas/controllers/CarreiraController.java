@@ -1,6 +1,5 @@
 package br.com.projeto_duvidas.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +34,7 @@ public class CarreiraController {
 	public String lista(Model model) {
 		List<Carreira> carreiras = (List<Carreira>) carreiraRepository.findAll();
 		model.addAttribute("carreiras", carreiras);
+		
 		return "carreira/form";		
 	}
 }

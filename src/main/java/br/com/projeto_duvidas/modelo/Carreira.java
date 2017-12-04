@@ -75,4 +75,9 @@ public class Carreira {
 	public void setCursos(List<Curso> cursos) {
 		this.cursos = cursos;
 	}
+	
+	@Override
+	public String toString() {
+		return nome;
+	}
 }

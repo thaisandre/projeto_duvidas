@@ -11,7 +11,7 @@
 		
 		<!-- Bootstrap CSS -->
     	<link rel="stylesheet" href="../resources/bootstrap/bootstrap.min.css"></link>
-    	<link rel="stylesheet" href="../resources/css/carreira.css"></link>
+    	<link rel="stylesheet" href="../resources/css/duvidas.css"></link>
 	</head>
 	
 	<body>
