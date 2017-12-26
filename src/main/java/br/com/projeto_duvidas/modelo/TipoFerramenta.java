@@ -1,5 +1,7 @@
 package br.com.projeto_duvidas.modelo;
 
+import org.hibernate.sql.SelectValues;
+
 public enum TipoFerramenta {
 	
 	BANCO_DE_DADOS ("banco de dados"),
@@ -17,8 +19,19 @@ public enum TipoFerramenta {
 		this.nome = nome;
 	}
 	
+	public String getValue(){
+		return name();
+	}
+	
+	public void setValue() {}
+	
 	public String getNome() {
 		return nome;
 	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
 	
 }

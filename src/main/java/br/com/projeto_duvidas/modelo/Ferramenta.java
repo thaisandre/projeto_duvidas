@@ -1,10 +1,26 @@
 package br.com.projeto_duvidas.modelo;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Ferramenta {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	
 	private String nome;
+	
+	@Column(columnDefinition = "TEXT")
 	private String descricao;
+	
+	@Enumerated(EnumType.STRING)
 	private TipoFerramenta tipo;
 	
 	public Ferramenta() {
