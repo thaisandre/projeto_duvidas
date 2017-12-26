@@ -16,26 +16,27 @@
 	
 	<body>
 	
-		<div class="container">
+		<div>
 		
 			<div class="adicionaCarreira container">
+				<div><h4>cadastro carreira</h4></div>
 				<form action="adiciona">
 					<div class="form-group">
 						<label for="inputNome">nome</label>
-						<input type="text" name="nome" id="inputNome" placeholder="nome"/>
+						<input class="form-control" type="text" name="nome" id="inputNome" placeholder="nome"/>
 					</div>
 					<div class="form-group">
 						<label for="inputLink">link</label>
-						<input type="text" name="link" id="inputLink" placeholder="link"/>
+						<input class="form-control" type="text" name="link" id="inputLink" placeholder="link"/>
 					</div>
 					<div>
 						<label for="inputLinguagem">linguagem</label>
-						<input type="text" name="linguagem" id="inputLinguagem" placeholder="linguagem"/>
+						<input class="form-control" type="text" name="linguagem" id="inputLinguagem" placeholder="linguagem"/>
 					</div>
 					<div>
 						<label for="inputLinguagem">descrição:</label>
 						<textarea class="form-control" rows="3" col="50" name="descricao"></textarea>
-					</div>
+					</div><br />
 					<button type="submit" class="btn  btn-primary">cadastrar</button>
 				</form>
 			</div>

@@ -14,25 +14,26 @@
     	<link rel="stylesheet" href="../resources/css/duvidas.css"></link>
 	</head>
 <body>
-	<div class="container">
+	<div>
 
 		<div class="adicionaCurso container">
+			<div><h4>cadastro curso</h4></div>
 			<form action="adicionaCurso" method="post">
 				<div class="form-group">
-					<label for="inputNome">nome</label> <input type="text" name="nome"
+					<label for="inputNome">nome</label> <input class="form-control" type="text" name="nome"
 						id="inputNome" placeholder="nome" />
 				</div>
 				<div class="form-group">
-					<label for="inputNomeAbreviado">nome</label> <input type="text"
+					<label for="inputNomeAbreviado">nome</label> <input class="form-control" type="text"
 						name="nomeAbreviado" id="inputNomeAbreviado"
 						placeholder="nome abreviado" />
 				</div>
 				<div class="form-group">
-					<label for="inputLink">link</label> <input type="text" name="link"
+					<label for="inputLink">link</label> <input class="form-control" type="text" name="link"
 						id="inputLink" placeholder="link" />
 				</div>
 				<div class="form-group">
-					<label for="inputLinguagem">linguagem</label> <input type="text"
+					<label for="inputLinguagem">linguagem</label> <input class="form-control" type="text"
 						name="linguagem" id="inputLinguagem" placeholder="linguagem" />
 				</div>
 				<div class="form-group">
@@ -47,6 +48,7 @@
 						</c:forEach>
 					</select>
 				</div>
+				<br/>
 				<button type="submit" class="btn  btn-primary">cadastrar</button>
 			</form>
 		</div>

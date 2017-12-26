@@ -1,29 +1,36 @@
 @CHARSET "UTF-8";
 
+body {
+	margin-top: 20px;
+}
 .adicionaCarreira {
 	position:relative;
-	width: 30%;
+	width: 25%;
 	height: 100%;
 	float: left;
+	font-size: 12px;
 }
 
 .listaCarreira {
 	position: relative;
-	width: 30%;
+	width: 65%;
 	height: 100%;
 	float: left;
+	font-size: 10px;
 }
 
 .adicionaCurso {
 	position:relative;
-	width: 30%;
+	width: 25%;
 	height: 100%;
 	float: left;
+	font-size: 12px;
 }
 
 .listaCursos {
 	position: relative;
-	width: 30%;
+	width: 65%;
 	height: 100%;
 	float: left;
+	font-size: 10px;
 }
