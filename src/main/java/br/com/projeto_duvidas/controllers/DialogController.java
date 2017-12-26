@@ -1,6 +1,8 @@
 package br.com.projeto_duvidas.controllers;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,11 +38,14 @@ public class DialogController {
 		String objetivo = objetivoNode.toString().replace('\"', ' ').trim();
 		System.out.println("objetivo: " + objetivo);
 		
-		JsonNode linguagemNode = parametros.findValue("linguagem");
-		String linguagem = linguagemNode.toString().replace('\"', ' ').trim();
-		System.out.println("linguagem: " + linguagem);
-	
-		String resposta = acaoFactory.getAcao(objetivo).executa(linguagem);
+		JsonNode ferramentaNode = parametros.findValue("ferramenta");
+				
+		List<String> params = new ArrayList<>();
+		for(int i = 0; i < ferramentaNode.size(); i++){
+			params.add(ferramentaNode.get(i).toString().replace('\"', ' ').trim());
+		}
+		
+		String resposta = acaoFactory.getAcao(objetivo).executa(params);
 		
 		Fulfillment f = new Fulfillment();	
 		f.setSpeech(resposta);
