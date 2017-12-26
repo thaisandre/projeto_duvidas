@@ -36,7 +36,7 @@ public class Carreiras implements Acao{
 		}
 		System.out.println("ferramentas: " + ferramentas.toString());
 		
-		List<Carreira> carreiras = carreiraRepository.findByFerramentas(ferramentas);
+		List<Carreira> carreiras = carreiraRepository.findByFerramentasIn(ferramentas);
 		System.out.println("carreiras: " + carreiras.toString());
 
 		for (Carreira carreira : carreiras) {

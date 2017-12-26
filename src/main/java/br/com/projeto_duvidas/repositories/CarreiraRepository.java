@@ -11,5 +11,5 @@ import br.com.projeto_duvidas.modelo.Ferramenta;
 @Repository
 public interface CarreiraRepository extends CrudRepository<Carreira, Long>  {
 
-	List<Carreira> findByFerramentas(List<Ferramenta> ferramentas);
+	List<Carreira> findByFerramentasIn(List<Ferramenta> ferramentas);
 }
