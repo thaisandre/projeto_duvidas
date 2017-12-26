@@ -1,7 +1,5 @@
 package br.com.projeto_duvidas.modelo;
 
-import org.hibernate.sql.SelectValues;
-
 public enum TipoFerramenta {
 	
 	BANCO_DE_DADOS ("banco de dados"),
@@ -11,7 +9,10 @@ public enum TipoFerramenta {
 	BIBLIOTECA ("biblioteca"),
 	API ("API"),
 	VERSIONAMENTO ("ferramenta de versionamento"),
-	BUILD ("ferramenta de build");
+	BUILD ("ferramenta de build"),
+	FOLHA_DE_ESTILO ("folha de estilo"),
+	PROTOCOLO ("protocolo"),
+	OUTROS ("outros");
 	
 	private String nome;
 	

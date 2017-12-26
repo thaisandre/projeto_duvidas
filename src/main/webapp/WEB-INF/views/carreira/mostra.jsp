@@ -42,14 +42,14 @@
 						<div>
 						<label for="inputTipo">ferramentas</label>
 						<form:select path="ferramentas" id="inputFerramenta" name="ferramentas" class="form-control">
-							<form:option value="${carreira.ferramentas}" label="---select---"/>
+							<form:option value="0" label="---select---"/>
 							<form:options items="${ferramentas}" itemValue="id" itemLabel="nome" />
 						</form:select>
 					</div><br/>
 					<div>
 						<label for="inputCurso">cursos</label>
 						<form:select path="cursos" id="inputCurso" name="cursos" class="form-control">
-							<form:option value="${carreira.cursos}" label="---select---"/>
+							<form:option value="0" label="---select---"/>
 							<form:options items="${cursos}" itemValue="id" itemLabel="nome" />
 						</form:select>
 					</div><br/>
