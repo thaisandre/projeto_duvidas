@@ -4,28 +4,36 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Carreira {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String nome;
-	
-	private String linguagem;
-	
+
+	private String nomeAbreviado;
+
 	private String link;
-	
-	@Column(columnDefinition = "LONGTEXT")
+
+	@Column(columnDefinition = "TEXT")
 	private String descricao;
-	
-	@OneToMany
+
+	@Enumerated(EnumType.STRING)
+	private TipoCarreira tipo;
+
+	@ManyToMany
+	private List<Ferramenta> ferramentas;
+
+	@ManyToMany
 	private List<Curso> cursos;
 
 	public Long getId() {
@@ -42,14 +50,6 @@ public class Carreira {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public String getLinguagem() {
-		return linguagem;
-	}
-
-	public void setLinguagem(String linguagem) {
-		this.linguagem = linguagem;
 	}
 
 	public String getLink() {
@@ -75,7 +75,31 @@ public class Carreira {
 	public void setCursos(List<Curso> cursos) {
 		this.cursos = cursos;
 	}
-	
+
+	public String getNomeAbreviado() {
+		return nomeAbreviado;
+	}
+
+	public void setNomeAbreviado(String nomeAbreviado) {
+		this.nomeAbreviado = nomeAbreviado;
+	}
+
+	public List<Ferramenta> getFerramentas() {
+		return ferramentas;
+	}
+
+	public void setFerramentas(List<Ferramenta> ferramentas) {
+		this.ferramentas = ferramentas;
+	}
+
+	public TipoCarreira getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(TipoCarreira tipo) {
+		this.tipo = tipo;
+	}
+
 	@Override
 	public String toString() {
 		return nome;

@@ -17,7 +17,7 @@
 <div>
 		
 			<div class="adicionaCarreira container">
-				<div><h4>cadastro carreira</h4></div>
+				<div><h4>cadastro ferramenta</h4></div>
 				<form:form servletRelativeAction="adicionaFerramenta" method="post" commandName="ferramenta">
 					<div class="form-group">
 						<label for="inputNome">nome</label>

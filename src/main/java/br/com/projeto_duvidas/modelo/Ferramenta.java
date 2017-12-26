@@ -57,5 +57,10 @@ public class Ferramenta {
 	public void setTipo(TipoFerramenta tipo) {
 		this.tipo = tipo;
 	}
+	
+	@Override
+	public String toString() {
+		return nome;
+	}
 
 }

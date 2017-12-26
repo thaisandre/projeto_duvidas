@@ -4,35 +4,40 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class Curso {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String nome;
-	
+
 	private String nomeAbreviado;
-	
-	private String linguagem;
-	
-	@Column(columnDefinition = "LONGTEXT")
+
+	@Column(columnDefinition = "TEXT")
 	private String descricao;
-	
+
 	private String link;
-	
+
+	@Enumerated(EnumType.STRING)
+	private TipoCurso categoria;
+
 	@ManyToMany
 	private List<Curso> cursos;
-	
-	@ManyToOne
-	private Carreira carreira;
+
+	@ManyToMany
+	private List<Carreira> carreiras;
+
+	@ManyToMany
+	private List<Ferramenta> ferramentas;
 
 	public Long getId() {
 		return id;
@@ -56,14 +61,6 @@ public class Curso {
 
 	public void setNomeAbreviado(String nomeAbreviado) {
 		this.nomeAbreviado = nomeAbreviado;
-	}
-
-	public String getLinguagem() {
-		return linguagem;
-	}
-
-	public void setLinguagem(String linguagem) {
-		this.linguagem = linguagem;
 	}
 
 	public String getDescricao() {
@@ -90,11 +87,33 @@ public class Curso {
 		this.cursos = cursos;
 	}
 
-	public Carreira getCarreira() {
-		return carreira;
+	public List<Carreira> getCarreiras() {
+		return carreiras;
 	}
 
-	public void setCarreira(Carreira carreira) {
-		this.carreira = carreira;
+	public void setCarreiras(List<Carreira> carreiras) {
+		this.carreiras = carreiras;
 	}
+
+	public TipoCurso getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(TipoCurso categoria) {
+		this.categoria = categoria;
+	}
+
+	public List<Ferramenta> getFerramentas() {
+		return ferramentas;
+	}
+
+	public void setFerramentas(List<Ferramenta> ferramentas) {
+		this.ferramentas = ferramentas;
+	}
+	
+	@Override
+	public String toString() {
+		return nome;
+	}
+
 }

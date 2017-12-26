@@ -9,6 +9,4 @@ import br.com.projeto_duvidas.modelo.Carreira;
 
 @Repository
 public interface CarreiraRepository extends CrudRepository<Carreira, Long>  {
-	
-	List<Carreira> findByLinguagem(String linguagem);
 }
