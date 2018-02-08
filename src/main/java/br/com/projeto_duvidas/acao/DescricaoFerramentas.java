@@ -16,7 +16,7 @@ public class DescricaoFerramentas implements Acao {
 	private FerramentaRepository ferramentaRepository;
 
 	@Override
-	public String executa(List<String> params) {
+	public String executa(List<String> params, String operador) {
 		System.out.println("ENTROU NO EXECUTA DO DESCRIÇÃO");
 		System.out.println(params.toString());
 		
@@ -29,9 +29,6 @@ public class DescricaoFerramentas implements Acao {
 			}
 		}
 		System.out.println("ferramentas: " + ferramentas.toString());
-		
-		//List<Carreira> carreiras = carreiraRepository.findByFerramentasIn(ferramentas);
-		//System.out.println("carreiras: " + carreiras.toString());
 
 		if (ferramentas.isEmpty()) {
 			return "não temos informações das ferramentas " + params;
@@ -39,9 +36,9 @@ public class DescricaoFerramentas implements Acao {
 			String resp = "";
 			for (int i = 0; i < ferramentas.size(); i++) {
 				if (i == ferramentas.size() - 1) {
-					resp += ferramentas.get(i).getNome() + " - " + ferramentas.get(i).getDescricao() + ".";
+					resp += "*" + ferramentas.get(i).getNome() + "* - " + ferramentas.get(i).getDescricao() + ".";
 				} else {
-					resp += ferramentas.get(i).getNome() + " - " + ferramentas.get(i).getDescricao() + "\n";
+					resp += "*" + ferramentas.get(i).getNome() + "* - " + ferramentas.get(i).getDescricao() + "\n";
 				}
 			}
 			return "entendi, você deseja saber sobre as ferramentas " + params + ". segue: " + "\n" + resp;

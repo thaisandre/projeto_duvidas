@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface Acao {
 	
-	public String executa(List<String> params);
+	public String executa(List<String> params, String operador);
 }

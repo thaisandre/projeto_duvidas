@@ -8,6 +8,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.data.domain.ExampleMatcher.GenericPropertyMatcher;
+import org.springframework.data.domain.ExampleMatcher.MatcherConfigurer;
+
 @Entity
 public class Ferramenta {
 
@@ -33,9 +37,9 @@ public class Ferramenta {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public String getNome() {
-		return nome;
+	
+	public String getNome(){
+		return this.nome;
 	}
 
 	public void setNome(String nome) {

@@ -59,11 +59,12 @@ public class CarreiraController {
 	}
 	
 	@RequestMapping("mostraCarreira")
-	public String mostra(Long id, Model model){
+	public ModelAndView mostra(Long id, Model model){
+		ModelAndView modelAndView = new ModelAndView("carreira/mostra");
+		
 		Carreira carreira = carreiraRepository.findOne(id);
 		model.addAttribute("carreira", carreira);
-		
-		ModelAndView modelAndView = new ModelAndView("carreira/form");
+	
 		modelAndView.addObject("tipos", TipoCarreira.values());
 		
 		List<Ferramenta> ferramentas = (List<Ferramenta>) ferramentaRepository.findAll();
@@ -72,9 +73,7 @@ public class CarreiraController {
 		List<Curso> cursos = (List<Curso>) cursoRepository.findAll();
 		modelAndView.addObject("cursos", cursos);
 		
-		
-		
-		return "carreira/mostra";
+		return modelAndView;
 	}
 	
 	@RequestMapping("alteraCarreira")

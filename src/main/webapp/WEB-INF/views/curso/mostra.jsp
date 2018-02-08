@@ -41,15 +41,15 @@
 				</div>
 				<div>
 					<label for="inputTipo">tipo</label>
-					<form:select path="tipo" id="inputTipo" name="tipo"
+					<form:select path="categoria" id="inputTipo" name="tipo"
 						class="form-control">
-						<form:option value="${curso.tipo}" label="---select---" />
+						<form:option value="${curso.categoria}" label="---select---" />
 						<form:options items="${tipos}" itemValue="value" itemLabel="nome" />
 					</form:select>
 				</div>
 				<br />
 				<div>
-					<label for="inputTipo">ferramentas</label>
+					<label for="inputFerramenta">ferramentas</label>
 					<form:select path="ferramentas" id="inputFerramenta"
 						name="ferramentas" class="form-control">
 						<form:option value="${curso.ferramentas}" label="---select---" />

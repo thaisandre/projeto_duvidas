@@ -42,7 +42,7 @@
 						</form:select>
 					</div><br/>
 						<div>
-						<label for="inputTipo">ferramentas</label>
+						<label for="inputFerramenta">ferramentas</label>
 						<form:select path="ferramentas" id="inputFerramenta" name="ferramentas" class="form-control">
 							<form:option value="0" label="---select---"/>
 							<form:options items="${ferramentas}" itemValue="id" itemLabel="nome" />

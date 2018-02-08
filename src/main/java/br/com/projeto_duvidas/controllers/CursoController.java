@@ -61,10 +61,24 @@ public class CursoController {
 	}
 	
 	@RequestMapping("mostraCurso")
-	public String mostra(Long id, Model model){
+	public ModelAndView mostra(Long id, Model model){		
+		ModelAndView modelAndView = new ModelAndView("curso/mostra");
+		
 		Curso curso = cursoRepository.findOne(id);
 		model.addAttribute("curso", curso);
-		return "curso/mostra";
+	
+		modelAndView.addObject("tipos", TipoCurso.values());
+		
+		List<Ferramenta> ferramentas = (List<Ferramenta>) ferramentaRepository.findAll();
+		modelAndView.addObject("ferramentas", ferramentas);
+		
+		List<Carreira> carreiras = (List<Carreira>) carreiraRepository.findAll();
+		modelAndView.addObject("carreiras", carreiras);
+		
+		List<Curso> cursos = (List<Curso>) cursoRepository.findAll();
+		modelAndView.addObject("cursos", cursos);
+		
+		return modelAndView;
 	}
 	
 	@RequestMapping("alteraCurso")

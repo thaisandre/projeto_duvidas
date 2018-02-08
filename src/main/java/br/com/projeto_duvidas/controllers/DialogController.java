@@ -38,6 +38,10 @@ public class DialogController {
 		String objetivo = objetivoNode.toString().replace('\"', ' ').trim();
 		System.out.println("objetivo: " + objetivo);
 		
+		JsonNode operadorNode = parametros.findValue("operador");
+		String operador = operadorNode.toString().replace('\"', ' ').trim();
+		
+		
 		JsonNode ferramentaNode = parametros.findValue("ferramenta");
 				
 		List<String> params = new ArrayList<>();
@@ -45,7 +49,7 @@ public class DialogController {
 			params.add(ferramentaNode.get(i).toString().replace('\"', ' ').trim());
 		}
 		
-		String resposta = acaoFactory.getAcao(objetivo).executa(params);
+		String resposta = acaoFactory.getAcao(objetivo).executa(params, operador);
 		
 		Fulfillment f = new Fulfillment();	
 		f.setSpeech(resposta);
