@@ -7,7 +7,6 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import br.com.projeto_duvidas.helpers.CarreiraHelper;
 import br.com.projeto_duvidas.modelo.Carreira;
 import br.com.projeto_duvidas.modelo.Ferramenta;
 import br.com.projeto_duvidas.repositories.CarreiraRepository;

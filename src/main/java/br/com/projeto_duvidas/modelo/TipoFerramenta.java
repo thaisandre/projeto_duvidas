@@ -12,6 +12,8 @@ public enum TipoFerramenta {
 	BUILD ("ferramenta de build"),
 	FOLHA_DE_ESTILO ("folha de estilo"),
 	PROTOCOLO ("protocolo"),
+	ESPECIFICACAO ("especificação"),
+	CONCEITO ("conceito"),
 	OUTROS ("outros");
 	
 	private String nome;

@@ -36,9 +36,9 @@ public class DescricaoFerramentas implements Acao {
 			String resp = "";
 			for (int i = 0; i < ferramentas.size(); i++) {
 				if (i == ferramentas.size() - 1) {
-					resp += "*" + ferramentas.get(i).getNome() + "* - " + ferramentas.get(i).getDescricao() + ".";
+					resp += "*" + ferramentas.get(i).getNome() + "*[" + ferramentas.get(i).getTipo().getNome() + "] - " + ferramentas.get(i).getDescricao() + ".";
 				} else {
-					resp += "*" + ferramentas.get(i).getNome() + "* - " + ferramentas.get(i).getDescricao() + "\n";
+					resp += "*" + ferramentas.get(i).getNome() + "*[" + ferramentas.get(i).getTipo().getNome() + "] - " + ferramentas.get(i).getDescricao() + "\n";
 				}
 			}
 			return "entendi, você deseja saber sobre as ferramentas " + params + ". segue: " + "\n" + resp;
