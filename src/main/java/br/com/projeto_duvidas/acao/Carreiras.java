@@ -87,14 +87,14 @@ public class Carreiras implements Acao {
 			String resp = "";
 			for (int i = 0; i < listaCarreiras.size(); i++) {
 				if (i == listaCarreiras.size() - 1) {
-					resp += listaCarreiras.get(i).getFerramentas() + ": " + listaCarreiras.get(i).getNome() + " - "
+					resp += "*" + listaCarreiras.get(i).getNome() + "*" + listaCarreiras.get(i).getFerramentas() + " - "
 							+ listaCarreiras.get(i).getLink() + ".";
 				} else {
-					resp += listaCarreiras.get(i).getFerramentas() + ": " + listaCarreiras.get(i).getNome() + " - "
+					resp += "*" + listaCarreiras.get(i).getNome() + "*" + listaCarreiras.get(i).getFerramentas() + " - "
 							+ listaCarreiras.get(i).getLink() + "\n";
 				}
 			}
-			return "entendi, você deseja saber as carreiras sobre " + params + ". segue: " + "\n" + resp;
+			return "entendi, você deseja saber as carreiras sobre " + params + ". segue: " + "\n\n" + resp;
 		}
 	}
 }
